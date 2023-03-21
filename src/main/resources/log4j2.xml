@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration>
+    <Appenders>
+        <Console name="Console">
+            <PatternLayout pattern="%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n"/>
+        </Console>
+    </Appenders>
+    <Loggers>
+        <!-- https://dougbreaux.github.io/2013/06/05/log4j-log-level.html -->
+        <!-- add JVM option "-Dlog4j.logLevel=INFO" to control the log level -->
+        <Root level="${sys:log4j.logLevel:-DEBUG}">
+            <AppenderRef ref="Console"/>
+        </Root>
+    </Loggers>
+</Configuration>
